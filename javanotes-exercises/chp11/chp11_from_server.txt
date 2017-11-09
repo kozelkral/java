@@ -1,0 +1,92 @@
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class ChatServer {
+  // A default port if none is provided
+  static final int DEFAULT_PORT = 3333;
+  // Protocol for sending a message
+  static final char MESSAGE = '0';
+  // Protocol for ending chat
+  static final char CLOSE = '1';
+  // Security handshake
+  static final String HANDSHAKE = "txcp///4";
+
+  public static void main(String[] args) {
+    int port;
+    ServerSocket listener;
+    Socket connection;
+    BufferedReader incoming;
+    PrintWriter outgoing;
+    String messageOut, messageIn;
+    Scanner input;
+
+    if (args.length == 0) {
+      port = DEFAULT_PORT;
+    } else {
+      try {
+        port = Integer.parseInt(args[0]);
+        if (port < 0 || port > 65535)
+          throw new NumberFormatException();
+      } catch (NumberFormatException e) {
+        System.out.println("Illegal port number " + args[0]);
+        return;
+      }
+    }
+
+    try {
+      listener = new ServerSocket(port);
+      System.out.println("Listening on port " + listener.getLocalPort());
+      connection = listener.accept();
+      listener.close();
+      incoming = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      outgoing = new PrintWriter(connection.getOutputStream());
+      outgoing.println(HANDSHAKE);
+      outgoing.flush();
+      messageIn = incoming.readLine();
+      if (!HANDSHAKE.equals(messageIn)) {
+        throw new Exception("Incorrect handshake received");
+      }
+      System.out.println("Connected...");
+    } catch (Exception e) {
+      System.out.println("An error occurred while opening the connection.\n" + e.getMessage());
+      return;
+    }
+
+    try {
+      input = new Scanner(System.in);
+      System.out.println("Enter 'quit' to end the program.\n");
+      while (true) {
+        System.out.println("Waitng...");
+        messageIn = incoming.readLine();
+        if (messageIn.length() > 0) {
+          if (messageIn.charAt(0) == CLOSE) {
+            System.out.println("Connection closed at other end.");
+            connection.close();
+            break;
+          }
+          messageIn = messageIn.substring(1);
+        }
+        System.out.println("RECEIVED: " + messageIn);
+        System.out.print("SEND: ");
+        messageOut = input.nextLine();
+        if (messageOut.equalsIgnoreCase("quit")) {
+          outgoing.println(CLOSE);
+          outgoing.flush();
+          connection.close();
+          System.out.println("Connection closed");
+          break;
+        }
+        outgoing.println(MESSAGE + messageOut);
+        outgoing.flush();
+        if (outgoing.checkError()) {
+          throw new IOException("Error occurred while sending message");
+        }
+      }
+    } catch (Exception e) {
+      System.out.println("An error has occurred and the connection has closed.\n" + e.getMessage());
+      System.exit(1);
+    }
+  } // end main
+
+} // end ChatServer
