@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<checkers_save_file>
+  <player value='3'/>
+  <board>
+    <square row='0' col='0' data='3'/>
+    <square row='0' col='1' data='0'/>
+    <square row='0' col='2' data='3'/>
+    <square row='0' col='3' data='0'/>
+    <square row='0' col='4' data='3'/>
+    <square row='0' col='5' data='0'/>
+    <square row='0' col='6' data='3'/>
+    <square row='0' col='7' data='0'/>
+    <square row='1' col='0' data='0'/>
+    <square row='1' col='1' data='3'/>
+    <square row='1' col='2' data='0'/>
+    <square row='1' col='3' data='3'/>
+    <square row='1' col='4' data='0'/>
+    <square row='1' col='5' data='0'/>
+    <square row='1' col='6' data='0'/>
+    <square row='1' col='7' data='3'/>
+    <square row='2' col='0' data='0'/>
+    <square row='2' col='1' data='0'/>
+    <square row='2' col='2' data='3'/>
+    <square row='2' col='3' data='0'/>
+    <square row='2' col='4' data='0'/>
+    <square row='2' col='5' data='0'/>
+    <square row='2' col='6' data='0'/>
+    <square row='2' col='7' data='0'/>
+    <square row='3' col='0' data='0'/>
+    <square row='3' col='1' data='0'/>
+    <square row='3' col='2' data='0'/>
+    <square row='3' col='3' data='0'/>
+    <square row='3' col='4' data='0'/>
+    <square row='3' col='5' data='1'/>
+    <square row='3' col='6' data='0'/>
+    <square row='3' col='7' data='1'/>
+    <square row='4' col='0' data='0'/>
+    <square row='4' col='1' data='0'/>
+    <square row='4' col='2' data='0'/>
+    <square row='4' col='3' data='0'/>
+    <square row='4' col='4' data='0'/>
+    <square row='4' col='5' data='0'/>
+    <square row='4' col='6' data='0'/>
+    <square row='4' col='7' data='0'/>
+    <square row='5' col='0' data='0'/>
+    <square row='5' col='1' data='0'/>
+    <square row='5' col='2' data='0'/>
+    <square row='5' col='3' data='1'/>
+    <square row='5' col='4' data='0'/>
+    <square row='5' col='5' data='0'/>
+    <square row='5' col='6' data='0'/>
+    <square row='5' col='7' data='0'/>
+    <square row='6' col='0' data='1'/>
+    <square row='6' col='1' data='0'/>
+    <square row='6' col='2' data='1'/>
+    <square row='6' col='3' data='0'/>
+    <square row='6' col='4' data='0'/>
+    <square row='6' col='5' data='0'/>
+    <square row='6' col='6' data='1'/>
+    <square row='6' col='7' data='0'/>
+    <square row='7' col='0' data='0'/>
+    <square row='7' col='1' data='1'/>
+    <square row='7' col='2' data='0'/>
+    <square row='7' col='3' data='1'/>
+    <square row='7' col='4' data='0'/>
+    <square row='7' col='5' data='0'/>
+    <square row='7' col='6' data='0'/>
+    <square row='7' col='7' data='1'/>
+  </board>
+</checkers_save_file>
